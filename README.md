@@ -54,6 +54,7 @@ SkillBridge/
 │   │   ├── main.js
 │   │   └── student.js
 │   ├── admin-applications.html
+│   ├── admin-students.html
 │   ├── admin.html
 │   ├── applications.html
 │   ├── index.html
@@ -227,6 +228,16 @@ All API requests are served by the same Express application.
 | `manage-opportunities.html` | Create, edit, and delete opportunities |
 | `opportunity-form.html` | Opportunity create/edit form |
 | `admin-applications.html` | Review all applications |
+
+## UI and UX
+
+The frontend uses a small custom design system in `public/css/style.css` rather than a UI framework. It provides:
+
+- A restrained teal and blue color theme
+- Consistent navigation, buttons, cards, forms, and status badges
+- Responsive layouts for smaller screens
+- Clear application status indicators for `pending`, `approved`, and `rejected`
+- Accessible labels and visible input focus states
 
 ## Development notes
 
