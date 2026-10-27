@@ -1,0 +1,23 @@
+require("dotenv").config();
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
+const connectDB = require("./db");
+const authRoutes = require("./routes/auth");
+const opportunityRoutes = require("./routes/opportunities");
+const studentRoutes = require("./routes/student");
+const adminRoutes = require("./routes/admin");
+
+const app = express();
+connectDB();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false }));
+app.use(express.static(path.join(__dirname, "../public")));
+app.get("/api/session", (req, res) => res.json({ user: req.session.user || null }));
+app.use("/api/auth", authRoutes);
+app.use("/api/opportunities", opportunityRoutes);
+app.use("/api/student", studentRoutes);
+app.use("/api/admin", adminRoutes);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

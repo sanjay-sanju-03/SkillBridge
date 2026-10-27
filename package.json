@@ -1,0 +1,1 @@
+{"name":"skillbridge","version":"1.0.0","main":"server/app.js","scripts":{"start":"node server/app.js","dev":"node server/app.js"},"dependencies":{"bcryptjs":"^3.0.2","dotenv":"^17.2.2","express":"^5.1.0","express-session":"^1.18.2","mongoose":"^8.18.1"}}
